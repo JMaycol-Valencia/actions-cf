@@ -2,14 +2,16 @@ name: "Deploy CF"
 
 on:
   push:
-    branches:["master"]
+    branches:
+      - master
 
 jobs:
   deploy-cf:
     runs-on: ubuntu-latest
     steps:
-      run: echo "Haciendo Pull del Codigo"
-      run: echo "Correr migraciones"
-      run: echo "Geneerar Binario"
-      run: echo "Publicar version"
+    - uses: actions/checkout@v2
+    - run: echo "Haciendo Pull del Codigo"
+    - run: echo "Correr migraciones"
+    - run: echo "Geneerar Binario"
+    - run: echo "Publicar version"
   
